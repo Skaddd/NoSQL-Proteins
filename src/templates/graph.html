@@ -19,9 +19,7 @@
                 labels: {
                     "Prot":{
                         caption: "prot_id",
-                        size: "pagerank",
-                        community:"community"
-                    }
+                        size: "pagerank",                    }
                     
                 },
                 relationships: {
@@ -31,7 +29,7 @@
                     }
                     
                 },
-                initial_cypher: "MATCH p=()-[r:LINK]->() RETURN p LIMIT 100",
+                initial_cypher: "MATCH p=(p1:Prot)-[j:LINK]-(p2:Prot)where p1.prot_id='A0A075B6H9' return p LIMIT 30 UNION MATCH p=(p1:Prot)-[j:LINK]-(p2:Prot) where p1.prot_id='P29016' return p LIMIT 30",
                 arrows: false
             }
 
