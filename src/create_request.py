@@ -11,17 +11,17 @@ from create_links import *
 
 def create_req(data,prot_name1,prot_name2,session):
     if prot_name1!="":
-        create_jaccard_csv(data,'humans_links.csv',prot_name1)
+        number_links,jaccard_mean=create_jaccard_csv(data,'humans_links.csv',prot_name1)
         push_links(session)
         if prot_name2!="":
-            create_jaccard_csv(data,'humans_links.csv',prot_name2)
+            number_links,jaccard_mean=create_jaccard_csv(data,'humans_links.csv',prot_name2)
             push_links(session)
         else:
             pass
     else:
         print("Nothing was entered")
 
-    return 0
+    return number_links,jaccard_mean
 
 	
 

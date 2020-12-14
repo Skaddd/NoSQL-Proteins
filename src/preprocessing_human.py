@@ -63,9 +63,13 @@ def compute_jaccard2(data,protein_id): #redundancy removed
 def create_jaccard_csv(data,file_name,protein_id):
     final=compute_jaccard2(data,protein_id)
     final=final.loc[final['sim']!=0.0]
-    final[['protein1','protein2','sim']].to_csv(r'./data/temp.csv',index=False)
-    final[['protein1','protein2','sim']].to_csv(r'./data/'+file_name,mode='a',index=False)
-
+    returned_df =final[['protein1','protein2','sim']]
+    returned_df.to_csv(r'./data/temp.csv',index=False)
+    returned_df.to_csv(r'./data/'+file_name,mode='a',index=False)
+    temp_df=pd.read_csv(r'./data/'+file_name)
+    number_links=temp_df.shape[0]
+    mean_jaccard=temp_df['sim'].mean()
+    return number_links,mean_jaccard
 
 
 

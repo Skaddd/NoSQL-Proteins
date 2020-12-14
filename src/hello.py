@@ -25,9 +25,9 @@ def hello_world():
         pname = request.form['inputprotpws']
         doLink = True if request.form.get('idlink') is not None else False
         jaccardTreshold = request.form['jaccardtreshold']
-        create_req(humans_cleared,pid,pname,session)
+        number_links,jaccard_mean=create_req(humans_cleared,pid,pname,session)
         cypher_query=get_request(pid,pname,doLink,jaccardTreshold)
-        replace_line(get_path()+'/templates/graph.html', 33, '                initial_cypher: "'+cypher_query+'",\n')
+        replace_line(get_path()+'/templates/graph.html', 31, '                initial_cypher: "'+cypher_query+'",\n')
 
         return graph()
     
