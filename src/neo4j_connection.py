@@ -49,8 +49,8 @@ def delete_nodes(session):
 if __name__ == '__main__':
 	session=connection_dbms() #1
 	#Cette partie est utile si on veut changer de fichier que l'on traite
-	"""
-	file_proteins=get_path()+"../data/humans.csv" 
+	
+	file_proteins=get_path()+"/data/humans.csv" 
 	delete_nodes(session) 
 	create_nodes(file_proteins,session,1) 
-	"""
+	

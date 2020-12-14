@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 
-
+counter =0
 def preprocessing(raw_df,name):
     global counter
     def string_tolist(string):
@@ -70,8 +70,9 @@ def create_jaccard_csv(data,file_name,protein_id):
 
 
 if __name__ == '__main__':
+    """
 	counter=0 # 1
 	humans=pd.read_csv("./data/humans.csv")# 1
 	humans_cleared=preprocessing(humans[['protein_id','domains']],'domains') #1
 	create_jaccard_csv(humans_cleared,'humans_links.csv',"P56945")
-
+    """

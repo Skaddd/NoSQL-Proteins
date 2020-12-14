@@ -58,6 +58,9 @@
       #lvisu{
           margin: 30px 0 0 0;
       }
+      .link, #jacc{
+          margin: 0 0 0 80px;
+      }
       
 
     </style>
@@ -76,26 +79,35 @@
         <label for="inputprotid">Protein ID</label>
       </div>
       </div>
-      
-      or
+      <div>------------------------------------------------------------</div>
+      if you want to associate an other protein :
 
     <div class="col">
       <div class="form-label-group">
         <input type="text" id="inputprotpws" name="inputprotpws" class="form-control" placeholder="Protein Name">
-        <label for="inputprotpws">Protein Name</label>
+        <label for="inputprotpws">Protein 2 ID</label>
       </div>
       </div>
 
+        <div class="link">
+              <input type="checkbox" value="link" id="idlink"  name="idlink"  class="form-check-input">
+              <label for="idlink" class="form-check-label">select only the link between them</label>
+        </div>
+
+        <div>------------------------------------------------------------</div>
 
       <h1> Choose your options</h1>
 
-      <div class="form-check form-check-inline">
-                <input type="checkbox" value="ec" id="idec"  name="idec"  class="form-check-input">
+      <div class="form-check form-check-inline" id="jacc">
+              <!--
+              <input type="checkbox" value="ec" id="idec"  name="idec"  class="form-check-input">
               <label for="idec" class="form-check-label">Display EC</label>
               <input type="checkbox" class="form-check-input"  name="idgoterm"  value="goterm" id="idgoterm">
               <label for="idgoterm" class="form-check-label">Display Go</label>
-              <input type="range" min="1" max="100" value="50" class="slider" id="myRange"  name="jaccardtreshold" >
+              -->
               Jaccard similarity: <span id="demo"></span> %
+              <input type="range" min="1" max="100" value="50" class="slider" id="myRange"  name="jaccardtreshold" >
+              
       </div>
 
 
